@@ -73,10 +73,22 @@ WSGI_APPLICATION = 'madagacgar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# MySQL database Server
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':{
+        'ENGINE':'mysql.connector.django',
+        'NAME':'madagacgar',
+        'USER':'avnadmin',
+        'PASSWORD':'AVNS_cd7srA_ZYNeraFWrg_c',
+        'HOST': 'mysql-16379085-umarkaziyev5-dfc0.i.aivencloud.com',
+        'PORT':'22905'
     }
 }
 

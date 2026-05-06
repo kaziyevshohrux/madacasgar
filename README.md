@@ -45,8 +45,8 @@ fi
 - Migrate Database
 
  CLUSTER -> DATABASE -> TABLE -> COLUMN -> ROW
-
-  ```
+ 
+  ``
   ./manage.py migrate
   ./manage.py showmigrations
   ```
