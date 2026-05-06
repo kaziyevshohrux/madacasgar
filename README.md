@@ -20,9 +20,8 @@ Build DJANGO application based on Architectural Pattern to organize CRUD and SSR
 
 
 ## Project run source
-exit
 - Install pipenv & create Virtual environment
-
+fi
   ```
   pip install pipenv
   pipenv install --python 3.11
@@ -44,6 +43,8 @@ exit
   """
 
 - Migrate Database
+
+ CLUSTER -> DATABASE -> TABLE -> COLUMN -> ROW
 
   ```
   ./manage.py migrate
