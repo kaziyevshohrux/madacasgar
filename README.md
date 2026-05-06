@@ -18,8 +18,9 @@ Build DJANGO application based on Architectural Pattern to organize CRUD and SSR
 12. What is Kernel & Shell language
 13. Deploy project on VPS/VPC
 
-## Project run source
 
+## Project run source
+exit
 - Install pipenv & create Virtual environment
 
   ```
@@ -59,7 +60,7 @@ Build DJANGO application based on Architectural Pattern to organize CRUD and SSR
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   );
   ```
-
+./manage
 - Run project via activated virtual environment:
 
   ```
