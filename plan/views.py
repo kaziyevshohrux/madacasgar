@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def get_home(request):
     try:
-        print('get_home')
+        print('\n get_home')
         #view
         data = "MIT"
         return render(request, "home.html", {"plans": data}, status=200 )
