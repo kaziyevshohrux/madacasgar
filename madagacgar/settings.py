@@ -82,13 +82,13 @@ WSGI_APPLICATION = 'madagacgar.wsgi.application'
 # MySQL database Server
 
 DATABASES = {
-    'default':{
-        'ENGINE':'mysql.connector.django',
-        'NAME':'madagacgar',
-        'USER':'avnadmin',
-        'PASSWORD':'AVNS_cd7srA_ZYNeraFWrg_c',
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'madagacgar',
+        'USER': 'avnadmin',
+        'PASSWORD': 'AVNS_cd7srA_ZYNeraFWrg_c',
         'HOST': 'mysql-16379085-umarkaziyev5-dfc0.i.aivencloud.com',
-        'PORT':'22905'
+        'PORT': '22905',
     }
 }
 
