@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render
+from portfolio.data import author
 
 # sport contoller 
 
@@ -9,7 +10,7 @@ def get_portfolio(request):
         print('\n get_portfolio')
         #portfolio model 
 
-        return render(request, "portfolio.html", status=200 )
+        return render(request, "portfolio.html", {'author': author}, status=200)
     except Exception as err:
         print('Error get_portfolio' ,err)
         return HttpResponseServerError('Something went wrong')

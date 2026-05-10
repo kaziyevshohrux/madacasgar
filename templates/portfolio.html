@@ -17,5 +17,38 @@
     <title>Portfolio</title>
   </head>
 
-  <body></body>
+  <body class="portfolio-frame"></body>
+  <div class="container">
+    <div class="left_section">
+      <div class="profile">
+        <div class="img">
+          <img src="/static/img/icon/profile.svg" alt="Profile Image" />
+        </div>
+        <div class="name">{{ author.name }}</div>
+        <div class="profession">{{ author.profession }}</div>
+        <div class="sns">
+         <div class="box"> <img src="/static/img/icon/sns-facebook.svg" class="icon" alt="Twitter"></div>
+          <div class="box"> <img src="/static/img/icon/sns-instagram.svg"  class="icon" alt="LinkedIn"></div>
+          <div class="box"> <img src="/static/img/icon/sns-twitter.svg" class="icon" alt="GitHub"></div>
+          <div class="box"> <img src="/static/img/icon/sns-linkedin.svg" class="icon" alt="Instagram"></div>
+          <div class="box"> <img src="/static/img/icon/sns-youtube.svg" class="icon" alt="Facebook"></div>
+          
+        </div>
+      </div>
+      
+      <div class="detail"></div>
+      <div class="marginer"></div>
+      <div class="languages"></div>
+      <div class="marginer"></div>
+      <div class="skills"></div>
+      <div class="marginer"></div>
+      <div class="extra-skills"></div>
+
+    </div>
+    <div class="middle_section">
+      <div class="highlight"></div>
+      <div class="services"></div>
+    </div>
+    <div class="right_section"></div>
+  </div>
 </html>
