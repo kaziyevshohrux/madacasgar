@@ -113,43 +113,386 @@
 .left_section .detail {
     width: 221px;
     height: 126px;
-    background: lightgray;
     position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.left_section .detail .inf {
+    width: 221px;
+    height: 25px;
+    position: relative;
+
     
 }
-.left_section .languages {
+.left_section .detail .inf2{
     width: 221px;
-    height: 153px;
-    background: lightgray;
+    height: 25px;
     position: relative;
+    text-align: right;
 }
-.left_section .skills {
-    width: 221px;
-    height: 242px;
-    background: lightgray;
-    position: relative;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.left_section .languages{
+    width:221px;
+    height:153px;
+
+    
+    padding:10px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+}
+
+/* TITLE */
+
+.left_section .languages h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+/* EACH LANGUAGE */
+
+.left_section .languages .lang_box{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+
+/* TEXT */
+
+.left_section .languages .lang_text{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color: #767676;
+    font-size:12px;
+}
+
+/* PROGRESS */
+
+.left_section .languages progress{
+    width:100%;
+    height:6px;
+    border:none;
+}
+
+/* BACKGROUND */
+
+progress::-webkit-progress-bar{
+    background:#ddd;
+    border-radius:20px;
+}
+
+/* GOLD LINE */
+
+progress::-webkit-progress-value{
+    background:#d4a017;
+    border-radius:20px;
+}
+
+progress::-moz-progress-bar{
+    background:#d4a017;
+    border-radius:20px;
+}
+.left_section .skills{
+    width:221px;
+    height:242px;
+
+
+    padding:10px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* TITLE */
+
+.left_section .skills h3{
+    font-size:18px;
+}
+
+/* EACH SKILL */
+
+.left_section .skills .skill_box{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+
+/* TEXT */
+
+.left_section .skills .skill_text{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color: #767676;
+    font-size:12px;
+}
+
+/* PROGRESS */
+
+.left_section .skills progress{
+    width:100%;
+    height:6px;
+    border:none;
+}
+
+/* BACKGROUND */
+
+.left_section .skills progress::-webkit-progress-bar{
+    background:#ddd;
+    border-radius:20px;
+}
+
+/* GOLD COLOR */
+
+.left_section .skills progress::-webkit-progress-value{
+    background:#d4a017;
+    border-radius:20px;
+}
+
+.left_section .skills progress::-moz-progress-bar{
+    background:#d4a017;
+    border-radius:20px;
 }
 .left_section .extra-skills {
     width: 221px;
     height: 160px;
-    background: lightgray;
     position: relative;
+    padding: 10px;
+}
+.left_section .extra-skills .h4{
+    font-size: 12px;
+    margin-bottom: 5px;
+    
+}
+.left_section .extra-skills .extra-inf{
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    color: #767676;
 }
 
 .middle_section .highlight {
     width: 974px;
     height: 447px;
     margin-bottom: 159px;
-    background: lightgray;
     position: relative;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
 }
-.middle_section .services {
-    width: 974px;
-    height: 653px;
-    background: lightgray;
+.middle_section .highlight .mid1{
     position: relative;
+    padding: 65px;
     display: flex;
     flex-direction: column;
+    text-align: left;
+}
+
+.middle_section .highlight .midimg{
+    width: 400px;
+    position: relative;
+    object-fit: cover;
+    
+}
+.middle_section .highlight .midtext1{
+    width: 500px;
+    color: #000000;
+    font-size: 45px;
+    font-style: normal;
+    text-transform: capitalize;
+    font-kerning: none;
+    font-feature-settings: "calt" off;
+}
+.middle_section .highlight .midtext2{
+    width: 500px;
+    color: #767676;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    text-transform: capitalize;
+    font-kerning: none;
+    font-feature-settings: "calt" off;
+    margin-top: 25px;
+}
+.middle_section .highlight .midbut{
+    width: 120px;
+    height: 50px;
+    background: #ffb400;
+    filter: drop-shadow(0px 4px 4px rgb(92, 91, 91));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    cursor: pointer;
+    border: none;}
+.middle_section .services{
+    width:974px;
+    min-height:653px;
+
+    padding:40px 30px;
+    border-radius:10px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* TOP TEXT */
+
+.middle_section .services .list{
+    width:450px;
+
+    text-align:center;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.middle_section .services .list h2{
+    margin-bottom:15px;
+    font-size:32px;
+}
+
+.middle_section .services .list span{
+    font-size:14px;
+    color:#555;
+    line-height:22px;
+}
+
+/* SERVICES GRID */
+
+.middle_section .services .services-information{
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:20px;
+
+    text-align: center;
+    
+    row-gap:30px;
+}
+
+
+.middle_section .services .services-information .card span{
+    font-size:13px;
+    color:#666;
+    line-height:20px;
+}
+
+/* ORDER */
+
+.order{
+    color:#d4a017;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+.right-section{
+    width:90px;
+    background:#d8d4ff;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding-top:25px;
+}
+
+/* dark mode */
+
+.dark-mode{
+    margin-bottom:60px;
+}
+
+.mode-icon{
+    width:24px;
+    cursor:pointer;
+}
+
+/* menu */
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.menu-icon{
+    width:50px;
+    height:50px;
+
+    background:#fff;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.menu-icon:hover{
+    background:#ffb400;
+}
+
+.menu-icon img{
+    width:22px;
+}
+
+/* tooltip */
+
+.tooltip{
+    position:absolute;
+
+    right:65px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:black;
+    color:white;
+
+    padding:5px 12px;
+    border-radius:5px;
+
+    font-size:13px;
+
+    visibility:hidden;
+    opacity:0;
+
+    transition:0.3s;
+}
+
+.tooltip::after{
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    right:-10px;
+
+    transform:translateY(-50%);
+
+    border-width:5px;
+    border-style:solid;
+
+    border-color:transparent transparent transparent black;
+}
+
+.menu-icon:hover .tooltip{
+    visibility:visible;
+    opacity:1;
 }
