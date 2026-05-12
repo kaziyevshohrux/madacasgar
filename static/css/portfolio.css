@@ -374,11 +374,8 @@ progress::-moz-progress-bar{
 
     grid-template-columns:repeat(3, 1fr);
 
-    gap:20px;
-
     text-align: center;
-    
-    row-gap:30px;
+
 }
 
 
@@ -395,7 +392,10 @@ progress::-moz-progress-bar{
     font-weight:bold;
     cursor:pointer;
 }
-
+.boxx{
+    width: 310px;
+    height: 225px;
+}
 
 .right-section{
     width:90px;
