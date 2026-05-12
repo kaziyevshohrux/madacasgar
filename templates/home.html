@@ -1,22 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include "components/header.html" %}
-  <link rel="stylesheet" href="/static/css/main.css" />
-    <link rel="stylesheet" href="/static/css/home.css" />
+
+  <link rel="stylesheet" type="text/css" href="/static/css/home.css" />
+
   <body>
     <div class="main-frame">
-        <div class="container home">
-            <h1>What's up {{data}}</h1> 
-          <div class="card" style="width: 18rem;">
-           <img src="https://cleantechnica.com/wp-content/uploads/2024/06/Bugatti-Tourbillon-front-three-quarter-800x450.jpg" class="card-img-top" alt="Bugatti Tourbillon">
-           <div class="card-body">
-            <h5 class="card-title">Bugatti Tourbillon</h5>
-            <p class="card-text">The Bugatti Tourbillon is a concept car that showcases the brand's commitment to innovation and performance.</p>
-           <a href="#" class="btn btn-primary">PressMe</a>
-          </div>
-          </div>
+      {% include "components/navbar.html" %}
+
+      <div class="container home">
+        <h1 class="display-4 text-center py-1">MY PLANS</h1>
+        <div class="p-3">
+          <form id="create-form">
+            <div class="d-flex align-items-center">
+              <input
+                id="create-field"
+                name="content"
+                autofocus
+                autocomplete="off"
+                class="form-control mr-3"
+                type="text"
+                style="flex: 1; border-radius: 20px"
+              />
+              <button class="btn btn-primary butt1" style="border-radius: 16px">
+                Add New Plan
+              </button>
+            </div>
+          </form>
         </div>
+
+        <ul id="item-list" class="list-group pb-5">
+          <li
+            class="plan list-group-item bg-light d-flex align-items-center justify-content-between custom-list"
+          >
+            <span class="item-text">Build Penguins airplane</span>
+            <div>
+              <button
+                data-id=""
+                class="edit-me btn btn-success btn-sm mr-1 custom-radius"
+              >
+                <i style="margin-right: 5px" class="bi bi-pencil-square"></i
+                >Edit
+              </button>
+              <button
+                data-id=""
+                class="delete-me btn btn-danger btn-sm custom-radius"
+              >
+                <i style="margin-right: 5px" class="bi bi-trash"></i> Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <button
+          id="clean-all"
+          class="btn btn-danger"
+          style="border-radius: 16px"
+        >
+          Delete All
+        </button>
+      </div>
     </div>
-    <script src="/static/js/home.js"></script>
+
+    <script type="text/javascript" src="/static/js/home.js"></script>
   </body>
-  </html>
+</html>

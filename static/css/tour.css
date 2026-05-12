@@ -1,5 +1,9 @@
-.main-frame .tour{
-    min-width: 1320px;
-    background: white;
-    height: 1700px;
+.tour {
+  height: calc(100vh - 65px);
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.tour .board {
+  margin-top: 40px;
 }

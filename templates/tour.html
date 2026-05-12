@@ -1,22 +1,18 @@
-{% comment %} dtl - django template language {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
   {% include "components/header.html" %}
- 
-    <link rel="stylesheet" href="/static/css/tour.css" />
- 
+
+  <link rel="stylesheet" type="text/css" href="/static/css/tour.css" />
+
   <body>
-    {% with status=False %}
     <div class="main-frame">
-        <div class="container tour">
-          {% if status %}
-          <h1>Tour page {{status}}</h1> 
-          {% else %}
-          <h1>Tour page {{status}}</h1>
-          {% endif %}
-        </div>
+      {% include "components/navbar.html" %}
+
+      <div class="container tour">
+        <img class="board" src="/static/img/tour.png" />
+      </div>
     </div>
-    {% endwith %}
-    <script src="/static/js/tour.js"></script>
+
+    <script type="text/javascript" src="/static/js/tour.js"></script>
   </body>
-  </html>
+</html>

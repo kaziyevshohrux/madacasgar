@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include "components/header.html" %}
-    <link rel="stylesheet" href="/static/css/sport.css" />
+
+  <link rel="stylesheet" type="text/css" href="/static/css/sport.css" />
+
   <body>
     <div class="main-frame">
-        <div class="container sport">
-            <h1>Sport page {{data}}</h1> 
-        </div>
+      {% include "components/navbar.html" %}
+
+      <div class="container sport">
+        <img class="board" src="/static/img/sport.png" />
+      </div>
     </div>
-    <script src="/static/js/sport.js"></script>
+
+    <script type="text/javascript" src="/static/js/sport.js"></script>
   </body>
-  </html>
+</html>

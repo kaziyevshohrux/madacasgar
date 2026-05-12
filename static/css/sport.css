@@ -1,5 +1,9 @@
-.main-frame .sport{
-    min-width: 1320px;
-    background: white;
-    height: 1700px;
+.sport {
+  height: calc(100vh - 65px);
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.sport .board {
+  margin-top: 40px;
 }
