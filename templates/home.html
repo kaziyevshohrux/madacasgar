@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include "components/header.html" %}
+  <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/home.css" />
   <body>
     <div class="main-frame">
         <div class="container home">
             <h1>What's up {{data}}</h1> 
+          <div class="card" style="width: 18rem;">
+           <img src="https://cleantechnica.com/wp-content/uploads/2024/06/Bugatti-Tourbillon-front-three-quarter-800x450.jpg" class="card-img-top" alt="Bugatti Tourbillon">
+           <div class="card-body">
+            <h5 class="card-title">Bugatti Tourbillon</h5>
+            <p class="card-text">The Bugatti Tourbillon is a concept car that showcases the brand's commitment to innovation and performance.</p>
+           <a href="#" class="btn btn-primary">PressMe</a>
+          </div>
+          </div>
         </div>
     </div>
-    
+    <script src="/static/js/home.js"></script>
   </body>
   </html>

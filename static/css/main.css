@@ -1,18 +1,4 @@
 .main-frame{
     background: silver;
 }
-.main-frame .home{
-    min-width: 1320px;
-    background: white;
-    height: 1700px;
-}
-.main-frame .sport{
-    min-width: 1320px;
-    background: white;
-    height: 1700px;
-}
-.main-frame .tour{
-    min-width: 1320px;
-    background: white;
-    height: 1700px;
-}
+
