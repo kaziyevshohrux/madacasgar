@@ -1,3 +1,20 @@
-from django.db import models
+from django.db import models, connection
 
 # plan modeul
+
+class Plan():
+
+#static 
+
+
+#constructor
+ def __init__(self):
+  self.connection=connection
+
+
+#method 
+ def get_home(self):
+   with self.connection.cursor() as cursor:
+    cursor.execute("SELECT * FROM plan WHERE  1 = 1")
+    result = cursor.fetchall()
+    print(result)
