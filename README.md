@@ -52,8 +52,15 @@ fi
   ```
 
   ```
+  ```
   ./manage.py dbshell
-
+CREATE TABLE plan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    content TEXT NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  );
+```
   CREATE TABLE plan (
     id INT AUTO_INCREMENT PRIMARY KEY,
     content TEXT NOT NULL,
