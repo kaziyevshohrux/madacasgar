@@ -28,11 +28,14 @@ function generateTem(new_plan){
 
 }
 form_obj.addEventListener("submit", function (e) {
+   // stop traditional API
     e.preventDefault();
     console.log("Trad API stop");
     const input_value = document.getElementById("create-field").value;
 
+    
     console.log('step1: frontending js dan backendga *> REST API req *> jonatilindi')
+  // start REST api
     axios
     .post("/create-plan", {content: input_value })
     .then((res)=>{
@@ -57,3 +60,29 @@ form_obj.addEventListener("submit", function (e) {
         console.log('creating plan is fail' , err)
     })
 });
+
+document.addEventListener('click', function(e){
+  console.log("event", e)
+  if (e.target.classList.contains('edit-me')){
+    const user_input = prompt('change :', 
+      e.target.parentElement.parentElement.querySelector(".item-text").innerHTML)
+
+      if (user_input){
+        axios.post("/update-plan", {
+          id: e.target.getAttribute("data-id"),
+          new_plan: user_input
+        })
+        .then((res)=>{
+          console.log('Axios res update:', res);
+          const {status , result} = res.data;
+
+          e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = user_input
+          console.log(result , user_input)
+        })
+        .catch((err)=>{
+          console.log('UPdating plan error:', err)
+
+        })
+      }
+    }
+})
