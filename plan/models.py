@@ -70,4 +70,26 @@ class Plan:
         print('step4 : Databasedan backendga malumot yuborildi')
         print(f"The new_plan_id: {new_plan_id} is created!")
         return new_plan_id
-       
+    
+    
+    def update_plan(self, data):
+        content = data.get("new_plan")
+        plan_id = data.get("id")
+        
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """
+                UPDATE plan
+                SET content=%s , updated_at = CURRENT_TIMESTAMP
+                WHERE id=%s
+                """,
+                [content, plan_id]
+            )
+
+            row_effected = cursor.rowcount
+
+        if row_effected == 0:
+            raise ValueError('your plan is not found')
+        
+        print(f"The new_plan: {plan_id} is updated!")
+        return plan_id

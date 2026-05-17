@@ -56,3 +56,26 @@ def create_plan(request):
         return JsonResponse({'status': 'fail' ,
                              'massage': massage}, 
                              status=500)
+
+@csrf_exempt
+def update_plan(request):
+    try:
+        print('\nupdate_plan')
+        
+        if request.method != "POST":
+            raise ValueError('only POST request are allowed!')
+        
+        data = json.loads(request.body)
+        print('request.body' , data)
+
+        result = plan.update_plan(data)
+        
+        return JsonResponse({'status': 'succsess',  
+                             'result': result},
+                               status=200)
+     
+    except Exception as err:
+        massage = str(err)
+        return JsonResponse({'status': 'fail' ,
+                             'massage': massage}, 
+                             status=500)
