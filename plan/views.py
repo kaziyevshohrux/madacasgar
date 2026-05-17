@@ -1,4 +1,5 @@
-from django.http import HttpResponseServerError
+import json
+from django.http import HttpResponseServerError, JsonResponse
 from django.shortcuts import redirect, render
 from plan.models import Plan
 from django.views.decorators.csrf import csrf_exempt
@@ -8,8 +9,10 @@ plan = Plan()
 def get_home(request):
     try:
         print('\n get_home')
-        #view model
+        print('step 2: backendga frontenddan kelishi')
         plans = plan.get_home()
+
+        print('backendda html qurilishga ketdi va frontendga javob yuborildi step-5 ')
         return render(request, "home.html", {"plans": plans}, status=200 )
     except Exception as err:
         print('Error get_home' ,err)
@@ -21,9 +24,35 @@ def create_goal(request):
         print('\ncreate_goal')
         if request.method != "POST":
             raise ValueError('only POST request are allowed!')
+        print('step 2: backendga frontenddan kelishi')
         content = request.POST.get("content")
         plan.create_goal(content)
+        print('backendda html qurilishga ketdi va frontendga javob yuborildi step-5 ')
         return redirect("/")
     except Exception as err:
         print('Error create_goal' ,err)
         return HttpResponseServerError('creation is fail')
+
+
+@csrf_exempt
+def create_plan(request):
+    try:
+        print('\ncreate_plan')
+        print('step2: backend frontendan kelgan > API req > qabul qildi')
+        if request.method != "POST":
+            raise ValueError('only POST request are allowed!')
+        
+        data = json.loads(request.body)
+        print('request.body' , data)
+
+        result = plan.create_plan(data)
+        print('step5: backendga > API response > ketadi')
+        return JsonResponse({'status': 'succsess',  
+                             'result': result},
+                               status=200)
+     
+    except Exception as err:
+        massage = str(err)
+        return JsonResponse({'status': 'fail' ,
+                             'massage': massage}, 
+                             status=500)
