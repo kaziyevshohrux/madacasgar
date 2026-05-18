@@ -30,16 +30,13 @@ function generateTem(new_plan){
 form_obj.addEventListener("submit", function (e) {
    // stop traditional API
     e.preventDefault();
-    console.log("Trad API stop");
     const input_value = document.getElementById("create-field").value;
 
     
-    console.log('step1: frontending js dan backendga *> REST API req *> jonatilindi')
   // start REST api
     axios
     .post("/create-plan", {content: input_value })
     .then((res)=>{
-        console.log('ste6: fronted backendan > API res ni > qabul qildi')
         console.log('axios response: ' , res)
         const { status , result } = res.data
 
@@ -47,7 +44,6 @@ form_obj.addEventListener("submit", function (e) {
             id:  result,
             content: input_value
         };
-        console.log('step7: mutade js page')
         
         document.getElementById('item-list').insertAdjacentHTML('beforeend', generateTem(new_plan) )
         document.getElementById("create-field").value = '';
@@ -62,7 +58,6 @@ form_obj.addEventListener("submit", function (e) {
 });
 
 document.addEventListener('click', function(e){
-  console.log("event", e)
   if (e.target.classList.contains('edit-me')){
     const user_input = prompt('change :', 
       e.target.parentElement.parentElement.querySelector(".item-text").innerHTML)

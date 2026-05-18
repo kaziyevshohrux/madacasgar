@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   {% include "components/header.html" %}
 
@@ -9,9 +9,9 @@
       {% include "components/navbar.html" %}
 
       <div class="container home">
-        <h1 class="display-4 text-center py-1">MY PLANS {% now "H:i:s" %}</h1>
+        <h1 class="display-4 text-center py-1">MY PLANS</h1>
         <div class="p-3">
-          <form id="create-form" action="create-goal" method="POST" > 
+          <form id="create-form" action="create-goal" method="POST">
             <div class="d-flex align-items-center">
               <input
                 id="create-field"
@@ -30,7 +30,7 @@
         </div>
 
         <ul id="item-list" class="list-group pb-5">
-          {% for item in plans  %}
+          {% for item in plans %}
           <li
             class="plan list-group-item bg-light d-flex align-items-center justify-content-between custom-list"
           >
@@ -62,10 +62,8 @@
           Delete All
         </button>
       </div>
-      
     </div>
-    
+
     <script type="text/javascript" src="/static/js/home.js"></script>
-  
   </body>
 </html>

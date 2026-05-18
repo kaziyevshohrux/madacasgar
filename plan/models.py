@@ -11,7 +11,6 @@ class Plan:
     # method
 
     def get_home(self):
-        print('step 3 backendan database keldi')
         with self.connection.cursor() as cursor:
             cursor.execute("SELECT * FROM plan WHERE 1 = 1")
 
@@ -23,11 +22,9 @@ class Plan:
             ]
 
         print(f"count {len(plans)}")
-        print('databasedan backendga qaytdi step-4')
         return plans
 
     def create_goal(self, content):
-        print('step 3 backenddan database keldi')
         with self.connection.cursor() as cursor:
 
             cursor.execute(
@@ -45,7 +42,6 @@ class Plan:
             new_plan_id = cursor.fetchone()[0]
 
         print(f"The new_plan_id: {new_plan_id} is created!")
-        print('databasedan backendga qaytdi step-4')
 
 
 
@@ -53,7 +49,6 @@ class Plan:
         
     def create_plan(self, data):
         content = data['content']
-        print('step3: backenddan database crud req yuborildi')
         with self.connection.cursor() as cursor:
 
             cursor.execute(
@@ -67,7 +62,6 @@ class Plan:
             cursor.execute("SELECT LAST_INSERT_ID()")
 
             new_plan_id = cursor.fetchone()[0]
-        print('step4 : Databasedan backendga malumot yuborildi')
         print(f"The new_plan_id: {new_plan_id} is created!")
         return new_plan_id
     
