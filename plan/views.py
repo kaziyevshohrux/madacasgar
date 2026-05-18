@@ -97,3 +97,27 @@ def delete_plan(request):
         return JsonResponse({'status': 'fail' ,
                              'massage': massage}, 
                              status=500)
+
+
+@csrf_exempt
+def delete_all_plans(request):
+    try:
+        print('\ndelete_all_plans')
+        
+        if request.method != "POST":
+            raise ValueError('allowed only post method')
+        
+     
+        result = plan.delete_all_plans()
+
+        return JsonResponse({'status': 'succsess',  
+                             'result': result},
+                               status=200)
+     
+    except Exception as err:
+        massage = str(err)
+        return JsonResponse({'status': 'fail' ,
+                             'massage': massage}, 
+                             status=500)
+
+
