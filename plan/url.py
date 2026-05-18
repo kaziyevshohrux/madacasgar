@@ -11,7 +11,8 @@ urlpatterns = [
     # REST API 
     path('create-plan', views.create_plan, name='create_plan'),
     path('update-plan', views.update_plan, name='update_plan'),
+    path('delete-plan', views.delete_plan, name='delete_plan')
 
 ]
 
-# plan url 
+# plan url ``

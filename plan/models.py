@@ -87,3 +87,21 @@ class Plan:
         
         print(f"The new_plan: {plan_id} is updated!")
         return plan_id
+    
+
+
+    def delete_plan(self , data):
+        plan_id = data.get('id')
+
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM plan WHERE id = %s",
+                           [plan_id]
+            )
+        
+            row_effected = cursor.rowcount
+        
+        if row_effected == 0:
+            raise ValueError('deleted plan not faund')
+        
+        print(f"the new_plan: {plan_id} is deleted")
+        return plan_id
