@@ -103,3 +103,21 @@ document.addEventListener('click', function(e){
       }
     }
 })
+
+document.getElementById('clean-all').addEventListener('click', () => {
+  if (confirm('Do want to delete all buttoms')){
+    axios
+    .post('/delete-all-plans')
+    .then((res)=>{
+      console.log('axios delete all plans', res)
+      const {status , result } = res.data;
+      document.getElementById('item-list').innerHTML = '';
+
+      console.log('all plans have been deleted', result)
+    })
+    .catch((err)=>{
+      console.log('Deleting all plans error:', err)
+    })
+  
+  }
+})
