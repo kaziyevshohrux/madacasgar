@@ -58,6 +58,28 @@ form_obj.addEventListener("submit", function (e) {
 });
 
 document.addEventListener('click', function(e){
+  if (e.target.classList.contains('delete-me')){
+    if (confirm("Do you want to delete")){
+      // start REST API
+      const plan_id = e.target.getAttribute('data-id');
+      axios
+      .post("/delete-plan" , {id : plan_id})
+      .then((res)=>{
+        console.log('Axios res delete:', res);
+        const {status , result} = res.data;
+
+        e.target.parentElement.parentElement.remove();
+
+      })
+      .catch((err)=>{
+        console.log('deleting plan error: ' , err)
+      })
+    }
+  }
+
+
+
+
   if (e.target.classList.contains('edit-me')){
     const user_input = prompt('change :', 
       e.target.parentElement.parentElement.querySelector(".item-text").innerHTML)

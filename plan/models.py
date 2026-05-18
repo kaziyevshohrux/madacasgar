@@ -91,11 +91,11 @@ class Plan:
 
 
     def delete_plan(self , data):
-        plan_id = data.get('id')
+        plan_id = data.get("id")
 
         with connection.cursor() as cursor:
             cursor.execute("DELETE FROM plan WHERE id = %s",
-                           [plan_id]
+            [plan_id]
             )
         
             row_effected = cursor.rowcount
