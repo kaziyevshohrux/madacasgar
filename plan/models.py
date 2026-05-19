@@ -67,6 +67,7 @@ class Plan:
     
     
     def update_plan(self, data):
+   
         content = data.get("new_plan")
         plan_id = data.get("id")
         
@@ -92,7 +93,6 @@ class Plan:
 
     def delete_plan(self , data):
         plan_id = data.get("id")
-
         with connection.cursor() as cursor:
             cursor.execute("DELETE FROM plan WHERE id = %s",
             [plan_id]

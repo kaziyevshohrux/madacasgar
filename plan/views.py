@@ -79,7 +79,6 @@ def update_plan(request):
 def delete_plan(request):
     try:
         print('\ndelete_plan')
-        
         if request.method != "POST":
             raise ValueError('allowed only post method')
         
